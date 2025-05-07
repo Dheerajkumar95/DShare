@@ -21,6 +21,13 @@ app.use(morgan("dev"));
 //ROUTES
 app.use("/api/v1/auth", require("./routes/userRoutes"));
 app.use("/api/v1/post", require("./routes/postRoutes"));
+//Home
+app.get("/",(req,res)=>{
+  res.status(200).send({
+    "success":true,
+    "msg":"server running"
+  })
+})
 //PORT
 const PORT = process.env.PORT || 2000;
 
